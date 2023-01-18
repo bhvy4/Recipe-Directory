@@ -38,40 +38,15 @@
       "cookingTime": "35 minutes"
     },
     {
-      "title": "THis",
+      "title": "new food",
       "ingredients": [
-        "carrot",
-        "this",
-        "and",
-        "that"
+        "ass",
+        "bass",
+        "leek"
       ],
-      "method": "this is a method",
-      "cookingTime": "323 minutes",
-      "id": "Lwk0TUv"
-    },
-    {
-      "title": "THis",
-      "ingredients": [
-        "carrot",
-        "this",
-        "and",
-        "that"
-      ],
-      "method": "this is a method",
-      "cookingTime": "323 minutes",
-      "id": "igXCZWf"
-    },
-    {
-      "title": "THis",
-      "ingredients": [
-        "carrot",
-        "this",
-        "and",
-        "that"
-      ],
-      "method": "this is a method",
-      "cookingTime": "323 minutes",
-      "id": "iaw9Kv2"
+      "method": "blah blah blah",
+      "cookingTime": "33 minutes",
+      "id": "bruB1eV"
     }
   ]
 }
