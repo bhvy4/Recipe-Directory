@@ -13,3 +13,13 @@
     margin-left: 15px;
     border-radius: 50%;
   }
+
+  .mod-toggle {
+    margin-right: auto;
+  }
+
+  .mod-toggle img {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
