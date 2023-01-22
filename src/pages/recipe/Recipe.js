@@ -12,9 +12,15 @@ export default function Recipe() {
   const [error, setError] = useState(false);
   const [isPending, setIsPending] = useState(false);
 
+  const handleClick = ()=>{
+    projectFirestore.collection('recipes').doc(id).update({
+      title : 'title is changed now'
+    })
+  }
+
   useEffect(() => {
     setIsPending(true);
-    projectFirestore.collection('recipes').doc(id).get().then(doc => {
+    const stopListen = projectFirestore.collection('recipes').doc(id).onSnapshot(doc => {
       if(doc.exists){
         setIsPending(false)
         setRecipe(doc.data())
@@ -23,9 +29,9 @@ export default function Recipe() {
        setError('could not fetch the data')
         setIsPending(false)
       }
-    }).catch(err=>{
-      setError(err.Message)
     })
+
+    return ()=>stopListen()
   }, [id])
   
 
@@ -39,6 +45,7 @@ export default function Recipe() {
           <p>{recipe.cookingTime} to make.</p>
           <ul>{recipe.ingredients.map(ing => <li key={ing}>{ing}</li> )}</ul>
           <p className="method">{recipe.method}</p>
+          <button onClick={handleClick}>update</button>
         </>
       )}
     </div>

@@ -10,7 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     setIsPending(true)
-    projectFirestore.collection('recipes').get().then(snapshot => {
+    const closeComp = projectFirestore.collection('recipes').onSnapshot(snapshot => {
       if (snapshot.empty) {
         setIsPending(false)
         setError('there are no recipes')
@@ -22,9 +22,12 @@ export default function Home() {
         setData(items)
         setIsPending(false)
       }
-    }).catch(err => {
+    }, (err) => {
       setError(err.message)
+      setIsPending(false)
     })
+    return () => closeComp()
+
   }, [])
 
 
